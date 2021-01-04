@@ -1,0 +1,40 @@
+<div class="text-center">
+  <h1>編集ページ</h1>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+  <%= form_with(model: @post, local: true) do |f| %>
+  
+  <div class ="form-group">
+    <%= f.label :title, "タイトル" %>
+    <%= f.text_field :title, class: "form-control"%>
+  </div>  
+    
+  <div class="form-group">
+    <%= f.label :content, '説明' %>
+    <%= f.text_field :content, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%=f.label :post_image, "写真" %>
+    <%= f.attachment_field :post_image, class: "form-control" %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :teacher_name, "先生の名前" %>
+    <%= f.text_field :teacher_name, class: "form-control" %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :subject, "教科名" %>
+    <%= f.text_field :subject, class: "form-control" %>
+  </div>
+  
+  
+  <%= f.submit '更新',class: "btn btn-primary btn-block" %>
+  
+<% end %>
+<%= link_to '一覧に戻る', posts_path %>
+
+ </div>
+</div> 

@@ -1,0 +1,156 @@
+.pagination {
+  justify-content: center;
+}
+
+/* posts/index*/
+.row row-cols-md-3 {
+    width: 348px;
+    text-overflow: ellipsis;
+    margin: 0px 0px 0px 0px;
+}
+
+.card {
+    margin-top: 20px;
+}
+ 
+.card-text {
+    width: 220px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    padding: 3px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+}
+
+.card-title {
+    width: 220px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    padding: 3px;
+}
+
+.card-subtitle  {
+    width: 220px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    padding: 3px;
+}
+
+.card-subtitle  {
+    width: 220px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    padding: 3px;
+}
+
+/*背景色*/
+body {
+  background-color: #ffffff;
+}
+
+/* posts/index*/
+
+.card {
+    margin-left: auto;
+    margin-right: auto;
+    
+    color: #000000;
+    border: #323232 solid 2px;
+    border-radius: 2px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    box-shadow: 0 0 6px 0 
+      rgba(0, 0, 0, 0.5);
+    transition: 0.2s;
+}
+
+.card:hover {
+      box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.5);
+      transform: translateY(-5px);
+      cursor: pointer;
+    }
+    
+
+/* ナビゲーション*/
+.navbar-brand {
+    font-family: "Arial Black";
+    font-size: 1.5em;
+    color: "#000000";
+}
+
+.nav-link {
+    color: "#000000";
+}
+
+
+/* アニメーション*/
+.images {
+  /* 子要素を横並びに配置する */
+  display: flex;
+  width: 100%;
+  padding: 3% 2%;
+  box-sizing: border-box;
+  height: 50vh;
+  background: #EEEEEE;
+  
+}
+.image {
+  /* 要素位置の指定 */
+  flex: 1;
+  /* はみ出す箇所を隠す */
+  overflow: hidden;
+  /* アニメーション速度を指定 */
+  transition: .8s;
+  margin: 0 2%;
+  /* ボックスに影をつける（左から水平方向の長さ、垂直方向の長さ、ぼかしの長さ、色） */
+  box-shadow: 0 20px 30px rgba(0,0,0,.2);
+  /* 文字の高さを指定 */
+  line-height: 1;
+  background-color: #FFFFFF;
+}
+.image > img {
+  /* デフォルトでの画像のズーム率を指定 */
+  width: 100%;
+  /* 文字背景の高さを指定 */
+  height: calc(100% - 50vh);
+  /* imgをimageの枠にトリミングしてはめ込む */
+  object-fit: cover;
+  /* アニメーション速度を指定 */
+  transition: .8s;
+  filter: saturate(100%) brightness(100%) contrast(100%);
+  /* transformプロパティで画像のサイズを拡大・縮小調整 */
+  transform: scale(0);
+}
+.image > span {
+  font-weight: bold;
+  font-size: 30px;
+  display: block;
+  text-align: center;
+  /* 文字の高さを指定 */
+  line-height: 9;
+}
+.image:hover {
+  /* hover後の画像のサイズを指定 */
+  flex: 1 1 30%;
+}
+.image:hover > img {
+  width: 100%;
+  /* 背景の高さを調整 */
+  height: calc(100% - 0vh);
+  filter: saturate(240%) brightness(110%) contrast(110%);
+  /* transformプロパティで画像のサイズを拡大・縮小調整 */
+  transform: scale(1);
+}

@@ -1,0 +1,53 @@
+
+
+<div class="images">
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1519221739757-4df89b4d0efe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80">
+      <span>Coming soon</span>
+    </div>
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1513543806865-85e29a7c0352?ixlib=rb-1.2.1&auto=format&fit=crop&w=2775&q=80">
+      <span>Note survice</span>
+    </div>
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1519221739757-4df89b4d0efe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80">
+      <span>Coming soon</span>
+    </div>
+  </div>
+
+
+<div class="row row-cols-md-3">
+  <% @posts.each do |post| %>
+    <div class="col-md-3">
+      <div class="card">
+          <%= attachment_image_tag post, :post_image, class: "card-img-top"%>
+          <div class="card-body">
+          <h4 class="card-title"><%=post.title%></h4>
+          <h6 class="card-subtitle text-primary"><%=post.subject%></h6>
+          <h6 class="card-subtitle text-muted"><%=post.teacher_name%></h6>
+          <p class="card-text"><%=post.content%></p>
+          <div class="text-center">
+             <% if current_user == post.user %>
+                  <%= link_to "削除", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+                  <%= link_to "編集", edit_post_path(post), class: "btn btn-success btn-sm"%>
+             <%end%>
+             <% if current_user.already_favorited?(post) %>
+                  <%= link_to post_favorites_path(post), method: :delete do %>
+                  <i class="fas fa-heart"></i>
+                  <%end%> 
+                  
+             <%else%>
+                  <%= link_to post_favorites_path(post),method: :post  do %>
+                  <i class ="fas fa-heart"></i>
+                  <%end%>
+             <%end%>
+            <%=post.favorites.count%>
+          </div>
+        </div>
+      </div>
+    </div>  
+  <% end %>
+</div>
+<%=paginate @posts %>
+    
+    

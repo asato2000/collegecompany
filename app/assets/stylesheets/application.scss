@@ -11,6 +11,7 @@
 
 .card {
     margin-top: 20px;
+    
 }
  
 .card-text {
@@ -35,6 +36,7 @@
     -webkit-line-clamp: 1;
     overflow: hidden;
     padding: 3px;
+    color:#FF5192;
 }
 
 .card-subtitle  {
@@ -153,4 +155,249 @@ body {
   filter: saturate(240%) brightness(110%) contrast(110%);
   /* transformプロパティで画像のサイズを拡大・縮小調整 */
   transform: scale(1);
+}
+
+
+/* ログインフォーム */
+
+
+.rog {
+  text-align:right;
+  width:500px;
+  height:800px;
+  margin-left:50px;
+  border: 4px solid;
+  border-right: 1px solid;
+  border-color: #BBBBBB;
+  box-shadow: 0px 6px #AAAAAA
+  
+}
+
+.img-1 {
+  text-align:right;
+  width:500px;
+  height:580px;
+  
+}
+
+
+
+
+
+.form-group {
+  width:480px;
+  text-align:left;
+  margin-left:10px;
+  margin-top:30px;
+  border-bottom: 2px solid #c0c0c0;
+  outline: none;
+}
+
+.form-control input{
+  text-align:center;
+  width:480px;
+  margin-left:85px;
+  margin-right:15px;
+ border-bottom: 2px solid #c0c0c0;
+  outline: none;
+}
+
+
+
+.container {
+  justify-content: center;
+}
+
+.actions {
+  width:300px;
+  text-align:center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.text-box {
+  text-align:center;
+  width:500px;
+  height:800px;
+  margin-left:90px;
+  font-family: 'Open Sans', sans-serif;
+  border: 4px solid;
+  border-color: #BBBBBB;
+  box-shadow: 6px 6px #AAAAAA
+}
+
+.text-center {
+  text-align:right;
+}
+
+.btn {
+  width:300px;
+  text-align:center;
+   background: #FF88FF;
+   margin-left:100px;
+   margin-bottom: 20px;
+   margin-top: 45px;
+   font-family: 'Open Sans', sans-serif;
+}
+
+.h1 {
+  font-size: 100px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* 登録フォーム */
+
+.form-group-1 {
+  width:480px;
+  text-align:left;
+  margin-left:10px;
+  margin-top:10px;
+  border: none;
+  border-bottom: 2px solid #e9e9e9;
+  border-bottom: 2px solid #c0c0c0;
+  outline: none;
+}
+
+.btn-1 {
+  width:300px;
+  text-align:center;
+   background: #FFFF77;
+   margin-left:100px;
+   margin-bottom: 10px;
+   margin-top:30px;
+   font-family: 'Open Sans', sans-serif;
+   outline: none;
+}
+
+
+/* 投稿編集フォーム */
+.row- {
+  border: 4px solid;
+  border-color: #BBBBBB;
+  box-shadow: 6px 6px #AAAAAA
+}
+
+.y {
+  text-align: center;
+}
+
+.form-group0 {
+  width:550px;
+  text-align:center;
+  margin-right:100px;
+  margin-top:18px;
+  outline: none;
+  background-color:#BAD3FF;
+ 
+}
+
+.y1 {
+  margin-right:150px;
+  margin-top: 0px;
+}
+
+/* 新規投稿フォーム */
+
+
+
+.label{
+	
+	margin-right: 15px;
+	width:100px;
+	border-left: solid 3px #FF6701;
+	padding-left: 10px;
+	
+}
+	
+.form-groupp {
+  width:90%;
+  text-align:left;
+  margin-left:10px;
+  margin-top:20px;
+  border-bottom: 2px solid #c0c0c0;
+  outline: none;
+  
+}
+
+.form-groupt {
+  width:90%;
+  text-align:left;
+  margin-left:10px;
+  margin-top:20px;
+  border-bottom: 2px solid #c0c0c0;
+  outline: none;
+  
+}
+
+.card-body-1 {
+  width: 100%;
+}
+
+.card-img-top-1 {
+  width:450px;
+  height:550px;
+}
+
+
+p.card-text-5 {
+   height: 8em;     
+   overflow: scroll;  /* スクロールバーを表示(※) */
+   border: #999999 1px;   
+   background-color: #EEEEEE; 
+}
+
+h4.card-title-1 {
+  height: 2em;     
+   overflow: scroll;  /* スクロールバーを表示(※) */
+   border: #FFAAFF 1px;   
+}
+
+
+
+
+.a {
+  
+  text-align:center;
+   font-family: 'Open Sans', sans-serif;
+}
+
+
+/* ユーザーSHOW *//* ユーザーSHOW *//* ユーザーSHOW *//* ユーザーSHOW */
+.fo {
+  margin-top:30px;
+  
+}
+
+.form-groupa {
+  margin-top:30px;
+  margin-left:15px;
+  
+}
+
+.ro {
+  width:800px;
+  margin-left:150px;
+  
+}
+
+.nav {
+  margin-left: 400px;
+  margin-top: 30px;
+}
+
+.row-1 {
+  display:flex;
+  margin-left: 70px;
+  
+}
+
+.o {
+  border: 4px solid;
+  border-color: #BBBBBB;
+  box-shadow: 6px 6px #AAAAAA
+}
+
+.o h1 {
+  text-align:center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 60px;
 }

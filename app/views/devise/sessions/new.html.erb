@@ -1,17 +1,20 @@
-<div class="text-center">
-  <h1>ログイン</h1>
-</div>
 
-
-
-
- <div class="row">
-   <div class="col-sm-6 offset-sm-3">
+  
      <%= form_with(model: @user, url: session_path(resource_name), local:true) do |f| %>
      <%= render "devise/shared/error_messages", resource: resource %>
      
+     <div class="row">
+    <div class="col-5">
+      
+    
+     <div class="img-1">
+  <%= image_tag 'latlay.jpg', class: 'rog' %>
+  </div>
+  </div>
    
-
+<div class="text-box">
+  <h1>LOGIN</h1>
+  
     <div class="form-group">
     <%= f.label :eメール %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
@@ -28,12 +31,19 @@
       <%= f.label :remember_me %>
     </div>
   <% end %>
-
   <div class="actions">
-   <%= f.submit "ログイン" , class: "btn btn-primary btn-block" %>
+   <%= f.submit "LOGIN" , class: "btn" %>
   </div>
+  <%= render "devise/shared/links" %>
 <% end %>
+  </div>
 
-<%= render "devise/shared/links" %>
+  
+
+
   </div>
 </div>  
+</div>
+</div>
+</div>
+

@@ -1,2 +1,54 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+
+    <div class="card md-3 style="max-width: 600px;"">
+        <div class="row no-gutters-1">
+      <div class="col-lg-5">
+          <%= attachment_image_tag @post, :post_image, class: "card-img-top-1"%>
+          </div>
+          
+          <div class="col-lg-7">
+              
+          <div class="card-body-1">
+              <div class="form-groupp">
+                  <label class="label">出品者</label>
+                  <h3 class="card-title-1"><%= link_to @post.user.username,user_path(@post.user)%></h3>
+              </div>
+              
+              
+              <div class="form-groupp">
+                  <label class="label">商品名</label>
+          <h4 class="card-title-1"><%=@post.title%></h4>
+          </div>
+          <div class="form-groupp">
+              <label class="label">教科名</label>
+          <h6 class="card-subtitle-1"><%=@post.subject%></h6>
+          </div>
+          
+          <div class="form-groupp">
+              <label class="label">先生の名前</label>
+          <h6 class="card-subtitle-1"><%=@post.teacher_name%></h6>
+          </div>
+          
+          <div class="form-groupt">
+              <label class="label">説明</label>
+          <p class="card-text-5"><%=@post.content%></p>
+          </div>
+          
+          <div class="form-groupt">
+              <label class="label">ノート</label>
+              <h3><object data="<%= @post.note %>" type="application/pdf" ></object></h3>
+
+          </div>
+          
+          <div class="text-center-1">
+             <% if current_user == @post.user %>
+                  <%= link_to "削除", @posts, method: :delete, data: { confirm: "You sure?" }, class: 'bt' %>
+                  <%= link_to "編集", edit_post_path(@post), class: "bta"%>
+             <%end%>
+             <div id="favorites_buttons_<%= @post.id %>">
+             <%= render partial: 'favorites/favorite_button', locals: { post: @post} %>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+</div>  

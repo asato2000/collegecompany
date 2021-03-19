@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-   before_action :authenticate_user!, only: [:index,:new,:create,:edit,:update,:destroy]
+   before_action :authenticate_user!, only: [:new,:create,:edit,:update,:destroy]
    before_action :find_post, only: [:show, :edit, :update, :destroy] 
    before_action :correct_user, only: [:destroy,:edit]
   def index
@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    
   end
 
   def new
@@ -43,7 +44,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     flash[:success] = 'メッセージを削除しました。'
-    redirect_back(fallback_location: root_path)
+    redirect_to root_path
     
   end
   
@@ -51,7 +52,7 @@ class PostsController < ApplicationController
   private
   
   def post_params
-    params.require(:post).permit(:content,:title,:teacher_name,:subject,:post_image)
+    params.require(:post).permit(:content,:title,:teacher_name,:subject,:post_image,:note)
   end  
   
   def find_post

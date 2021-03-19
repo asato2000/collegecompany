@@ -9,6 +9,9 @@
             <ul class="navbar-nav">
                 <% if user_signed_in? %>
                 <li>
+                    <%= link_to "プロフィール", user_path(current_user), class: "nav_link"%>
+                </li>
+                <li>
                     <%= link_to "プロフィールを変更する", edit_user_registration_path, class: "nav-link text-primary"%>
                 </li>
                 <li>

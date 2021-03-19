@@ -1,0 +1,40 @@
+<div class="o">
+    <h1>User-Page</h1>
+<div class="ro">
+<div class="row-1">
+ <div class="col-5">
+<div class="form-groupa">
+     <label class="label">名前</label>
+      <h3 class="card-title"><%=@user.username%></h3>
+</div>
+
+<div class="form-groupa">
+     <label class="label">大学名</label>
+      <h3 class="card-title"><%=@user.college%></h3>
+</div>
+</div>
+<div class="fo">
+    <label class="label">画像</label>
+    
+     <h3 class="card-title"><%= attachment_image_tag @user, :user_image, :fill, 300, 300, format: 'jpeg'%></h3>
+    
+</div>
+</div>
+</div>
+
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </li>
+</ul>
+
+</div>

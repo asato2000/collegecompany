@@ -23,25 +23,18 @@
           <%= attachment_image_tag post, :post_image, class: "card-img-top"%>
           <div class="card-body">
           <h4 class="card-title"><%=post.title%></h4>
-          <h6 class="card-subtitle text-primary"><%=post.subject%></h6>
+          <h6 class="card-subtitle text-black"><%=post.subject%></h6>
           <h6 class="card-subtitle text-muted"><%=post.teacher_name%></h6>
           <p class="card-text"><%=post.content%></p>
-          <div class="text-center">
+          <%= link_to "詳細", post_path(post), class: "fo"%>
+          <div class="text-center-1">
              <% if current_user == post.user %>
-                  <%= link_to "削除", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
-                  <%= link_to "編集", edit_post_path(post), class: "btn btn-success btn-sm"%>
+                  <%= link_to "削除", post, method: :delete, data: { confirm: "You sure?" }, class: 'btw' %>
+                  <%= link_to "編集", edit_post_path(post), class: "bta"%>
              <%end%>
-             <% if current_user.already_favorited?(post) %>
-                  <%= link_to post_favorites_path(post), method: :delete do %>
-                  <i class="fas fa-heart"></i>
-                  <%end%> 
-                  
-             <%else%>
-                  <%= link_to post_favorites_path(post),method: :post  do %>
-                  <i class ="fas fa-heart"></i>
-                  <%end%>
-             <%end%>
-            <%=post.favorites.count%>
+             <div id="favorites_buttons_<%= post.id %>">
+             <%= render partial: 'favorites/favorite_button', locals: { post: post} %>
+             </div>
           </div>
         </div>
       </div>

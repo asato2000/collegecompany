@@ -10,12 +10,19 @@ Rails.application.routes.draw do
    resources :users, only: [:show]
    
    resources :cards, only: [:new, :show] do
- collection do
+    collection do
    post 'show', to: 'cards#show'
    post 'pay', to: 'cards#pay'
    post 'delete', to: 'cards#delete'
- end
-end
+    end
+   end
+   resources :order, only: [:new, :create, :confirm, :complete] do
+    collection do
+      post 'confirm'
+
+      get 'complete'
+    end
+   end
 
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

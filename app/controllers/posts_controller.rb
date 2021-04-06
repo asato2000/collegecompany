@@ -52,7 +52,7 @@ class PostsController < ApplicationController
   private
   
   def post_params
-    params.require(:post).permit(:content,:title,:teacher_name,:subject,:post_image,:note)
+    params.require(:post).permit(:content,:title,:teacher_name,:subject,:post_image,:note,:price)
   end  
   
   def find_post

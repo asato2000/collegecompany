@@ -38,6 +38,10 @@
               <h3><object data="<%= @post.note %>" type="application/pdf" ></object></h3>
 
           </div>
+          <div class="form-groupt">
+              <label class="label">値段</label>
+              <h6 class="card-subtitle-1"><%=@post.price%>円</h6>
+          </div>
           
           <div class="text-center-1">
              <% if current_user == @post.user %>
@@ -47,6 +51,7 @@
              <div id="favorites_buttons_<%= @post.id %>">
              <%= render partial: 'favorites/favorite_button', locals: { post: @post} %>
              </div>
+        　      
           </div>
         </div>
       </div>

@@ -34,12 +34,17 @@
    <%=f.label :note, "ノート" %>
    <%= f.file_field :note %>
  </div>
+ <div class="form-group0">
+   <%= f.label :price, "値段"%>
+   <%= f.text_field :price %>
+ </div>
+
   
-  <div class=y1>
-  <%= f.submit '投稿',class: "btn btn-black btn-block" %>
+  <div class="y1">
+  <%= f.submit '投稿', class: "btn btn-black btn-block" %>
   </div>
 <% end %>
-<div class=y>
+<div class="y">
 <%= link_to '一覧に戻る', posts_path %>
 </div>
  </div>

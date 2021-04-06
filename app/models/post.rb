@@ -4,6 +4,7 @@ class Post < ApplicationRecord
     has_many :fav_posts, through: :favorites, source: :user
     mount_uploader :note, NoteUploader
     
+    
     validates :title,:content,:teacher_name,:subject, presence: true
      attachment :post_image
      

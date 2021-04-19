@@ -3,8 +3,15 @@ Rails.application.routes.draw do
   
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :posts do
-    resource :favorites, only: [:create,:destroy]
+       member do
+      get 'purchase', to: 'posts#purchase'
+      post 'buy', to: 'posts#buy'
+    end
+      
+      
+     resource :favorites, only: [:create,:destroy]
   end  
+  
   devise_for :users
   root to: 'posts#index'
    resources :users, only: [:show]
@@ -16,14 +23,6 @@ Rails.application.routes.draw do
    post 'delete', to: 'cards#delete'
     end
    end
-   resources :order, only: [:new, :create, :confirm, :complete] do
-    collection do
-      post 'confirm'
-
-      get 'complete'
-    end
-   end
-
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

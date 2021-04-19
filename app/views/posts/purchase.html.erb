@@ -1,5 +1,4 @@
-
-    <div class="card md-3 style="max-width: 600px;"">
+<div class="card md-3 style="max-width: 600px;"">
         <div class="row no-gutters-1">
       <div class="col-lg-5">
           <%= attachment_image_tag @post, :post_image, class: "card-img-top-1"%>
@@ -42,19 +41,9 @@
               <label class="label">値段</label>
               <h6 class="card-subtitle-1"><%=@post.price%>円</h6>
           </div>
-          
-          <h2><%= link_to "購入確認", purchase_post_path(@post), class: "bta"%></h2>
-          
-          <div class="text-center-1">
-             <% if current_user == @post.user %>
-                  <%= link_to "削除", @posts, method: :delete, data: { confirm: "You sure?" }, class: 'bt' %>
-                  <%= link_to "編集", edit_post_path(@post), class: "bta"%>
-             <%end%>
-             <div id="favorites_buttons_<%= @post.id %>">
-             <%= render partial: 'favorites/favorite_button', locals: { post: @post} %>
-             </div>
-        　      
-          </div>
+          <%= form_with url: buy_post_path do %>
+               <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_e1efc7d02aa1d56abcfd9715"></script>
+          <% end %>   
         </div>
       </div>
     </div>  

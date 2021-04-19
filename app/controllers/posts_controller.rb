@@ -1,7 +1,10 @@
 class PostsController < ApplicationController
    before_action :authenticate_user!, only: [:new,:create,:edit,:update,:destroy]
-   before_action :find_post, only: [:show, :edit, :update, :destroy] 
+   before_action :find_post, only: [:show, :edit, :update, :destroy, :purchase, :buy] 
    before_action :correct_user, only: [:destroy,:edit]
+   
+    require "payjp"
+       
   def index
     @posts =  Post.order(id: :desc).page(params[:page]).per(8)
   end
@@ -31,14 +34,13 @@ class PostsController < ApplicationController
   end
 
   def update
-
-    if @post.update(post_params)
+   if @post.update(post_params)
       flash[:success] = 'ノートは正常に更新されました'
       redirect_to root_path
-    else
+   else
       flash.now[:danger] = 'ノートは更新されませんでした'
       render :edit
-    end
+   end
   end
 
   def destroy
@@ -47,7 +49,30 @@ class PostsController < ApplicationController
     redirect_to root_path
     
   end
+ 
+    
+  def purchase
+#     card = Card.where(user_id: current_user.id).first
+#   if card.blank?
+#       redirect_to controller: "card", action: "new"
+#   else
+#       Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+#       customer = Payjp::Customer.retrieve(card.customer_id)
+#       @card = customer.cards.retrieve(card.card_id)
+    
+# 　 end
+  end  
+
   
+  def buy
+    Payjp.api_key = "sk_test_acb241d5383b3bb5ed880d2b"
+    Payjp::Charge.create(
+      amount: @post.price, # 決済する値段
+      card: params['payjp-token'], # フォームを送信すると作成・送信されてくるトークン
+      currency: 'jpy'
+    )
+  
+  end   
   
   private
   
@@ -56,18 +81,17 @@ class PostsController < ApplicationController
   end  
   
   def find_post
-        @post = Post.find(params[:id])
+     @post = Post.find(params[:id])
   end
   
   
-    def correct_user
-        @post = current_user.posts.find_by(id: params[:id])
-        unless @post
-            redirect_to new_user_session_path
-        end
-    end    
+  def correct_user
+    @post = current_user.posts.find_by(id: params[:id])
+      unless @post
+         redirect_to new_user_session_path
+      end
+  end    
     
   
   
-  
-end
+end 

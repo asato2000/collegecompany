@@ -32,6 +32,10 @@
     <%= f.label :subject, "教科名" %>
     <%= f.text_field :subject, class: "form-control" %>
   </div>
+  <div class="form-group0">
+   <%=f.label :note, "ノート" %>
+   <%= f.file_field :note %>
+  </div>
   
   <div class="y1">
   <%= f.submit '更新',class: "btn btn-primary btn-block" %>

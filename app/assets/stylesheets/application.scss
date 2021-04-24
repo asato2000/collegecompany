@@ -1,3 +1,15 @@
+
+/* layouts/application.html.erb　レスポンシブ*/
+@media screen and (min-width: 767px) { /*ウィンドウ幅が767px以上の場合に適用*/
+}
+
+@media screen and (max-width: 767px) { /*ウィンドウ幅が最大767pxまでの場合に適用*/
+}
+
+@media screen and (max-width: 327px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
+}
+
+
 .pagination {
   justify-content: center;
 }

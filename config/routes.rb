@@ -6,6 +6,7 @@ Rails.application.routes.draw do
        member do
       get 'purchase', to: 'posts#purchase'
       post 'buy', to: 'posts#buy'
+      get "done", to: "posts#done"
     end
       
       

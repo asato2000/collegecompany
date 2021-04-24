@@ -6,7 +6,7 @@ class Post < ApplicationRecord
     mount_uploader :note, NoteUploader
     
     
-    validates :title,:content,:teacher_name,:subject, presence: true
+    validates :title,:content,:teacher_name,:subject,:price,:note, presence: true
      attachment :post_image
      
     

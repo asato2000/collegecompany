@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
    before_action :authenticate_user!, only: [:new,:create,:edit,:update,:destroy]
-   before_action :find_post, only: [:show, :edit, :update, :destroy, :purchase, :buy] 
+   before_action :find_post, only: [:show, :edit, :update, :destroy, :purchase, :buy,:done] 
    before_action :correct_user, only: [:destroy,:edit]
    
     require "payjp"
@@ -52,25 +52,31 @@ class PostsController < ApplicationController
  
     
   def purchase
-#     card = Card.where(user_id: current_user.id).first
-#   if card.blank?
-#       redirect_to controller: "card", action: "new"
-#   else
-#       Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
-#       customer = Payjp::Customer.retrieve(card.customer_id)
-#       @card = customer.cards.retrieve(card.card_id)
-    
-# 　 end
+    # card = Card.where(user_id: current_user.id).first
+    # if card.blank?
+    #   redirect_to controller: "cards", action: "new"
+    # else
+    #   Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    #   customer = Payjp::Customer.retrieve(card.customer_id)
+    #   @card = customer.cards.retrieve(card.card_id)
+    # end 
   end  
+
 
   
   def buy
-    Payjp.api_key = "sk_test_acb241d5383b3bb5ed880d2b"
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     Payjp::Charge.create(
-      amount: @post.price, # 決済する値段
-      card: params['payjp-token'], # フォームを送信すると作成・送信されてくるトークン
+      amount: @post.price, 
+      card: params['payjp-token'], 
       currency: 'jpy'
     )
+    @post.save
+    redirect_to action: "done"
+    
+    
+  def done
+  end  
   
   end   
   

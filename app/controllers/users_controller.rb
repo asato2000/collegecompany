@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def show
     
     @fav_posts = @user.fav_posts.page(params[:page])
-    
+    @posts = @user.posts.page(params[:page])
   end  
   
 

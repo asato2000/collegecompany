@@ -106,7 +106,7 @@ body {
 }
 
 .nav-link {
-    color: "#000000";
+    color: "#007BFF";
 }
 
 
@@ -412,4 +412,38 @@ h4.card-title-1 {
   text-align:center;
   font-family: 'Open Sans', sans-serif;
   font-size: 60px;
+}
+
+/* ユーザー/SHOW */
+.col-md-3 {
+  display: inline-block; 
+ 
+}
+
+.h1 {
+  text-align:center;
+  margin-top: 3%;
+}
+
+.form {
+  text-align:center;
+  border: 4px solid;
+  border-color: #BBBBBB;
+  box-shadow: 6px 6px #AAAAAA
+}
+
+.card-title3 {
+  text-align:center;
+  margin-top:2%;
+  margin-bottom:3%;
+}
+
+.label2{
+	
+	width:10%;
+	border-bottom: solid 3px #FF6701;
+}
+
+.card-body {
+  text-align: left;
 }

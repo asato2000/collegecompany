@@ -9,16 +9,13 @@
             <ul class="navbar-nav">
                 <% if user_signed_in? %>
                 <li>
-                    <%= link_to "プロフィール", user_path(current_user), class: "nav_link"%>
+                    <%= link_to "プロフィール", user_path(current_user), class: "nav-link text-primary"%>
+                </li>
+               
+                    <%= link_to "新規投稿", new_post_path, class: "nav-link text-primary" %>
                 </li>
                 <li>
-                    <%= link_to "プロフィールを変更する", edit_user_registration_path, class: "nav-link text-primary"%>
-                </li>
-                <li>
-                    <%= link_to "新規投稿", new_post_path, class: "nav-link" %>
-                </li>
-                <li>
-                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link text-primary" %>
                 </li>
                 <%else%>
                

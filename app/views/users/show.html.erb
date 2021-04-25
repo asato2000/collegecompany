@@ -1,24 +1,30 @@
 <div class="form">
-
-<div class="form-group">
-     <label class="label">名前</label>
-      <h3 class="card-title"><%=@user.username%></h3>
-</div>
-
-<div class="form-group">
-     <label class="label">大学名</label>
-      <h3 class="card-title"><%=@user.college%></h3>
-</div>
-</div>
-<div class="form-group">
-    <label class="label">画像</label>
     
-     <h3 class="card-title"><%= attachment_image_tag @user, :user_image, :fill, 300, 300, format: 'jpeg'%></h3>
+    <h1>プロフィール</h1>
+
+<div class="form-groupi">
+     <label class="label2">名前</label>
+      <h3 class="card-title3"><%=@user.username%></h3>
+</div>
+
+<div class="form-groupi">
+     <label class="label2">大学名</label>
+      <h3 class="card-title3"><%=@user.college%></h3>
+</div>
+
+<div class="form-groupi">
+    <label class="label2">画像</label>
+    
+     <h3 class="card-title3"><%= attachment_image_tag @user, :user_image, :fill, 300, 300, format: 'jpeg'%></h3>
     
 </div>
+
+
+<div class="like">
 <h1>いいね一覧</h1>
 <% @fav_posts.each do |post| %>
-<div class="row row-cols-md-3">
+
+
     <div class="col-md-3">
       <div class="card">
           <%= attachment_image_tag post, :post_image, class: "card-img-top"%>
@@ -42,21 +48,30 @@
     </div>  
   <% end %>
   
+  <h1>投稿</h1>
+  <% @posts.each do |post| %>
+
+    <div class="col-md-3">
+      <div class="card">
+          <%= attachment_image_tag post, :post_image, class: "card-img-top"%>
+          <div class="card-body">
+          <h4 class="card-title"><%=post.title%></h4>
+          <h6 class="card-subtitle text-black"><%=post.subject%></h6>
+          <h6 class="card-subtitle text-muted"><%=post.teacher_name%></h6>
+          <p class="card-text"><%=post.content%></p>
+          <%= link_to "詳細", post_path(post), class: "fo"%>
+          <div class="text-center-1">
+             <% if current_user == post.user %>
+                  <%= link_to "削除", post, method: :delete, data: { confirm: "You sure?" }, class: 'btw' %>
+                  <%= link_to "編集", edit_post_path(post), class: "bta"%>
+             <%end%>
+             <div id="favorites_buttons_<%= post.id %>">
+             <%= render partial: 'favorites/favorite_button', locals: { post: post} %>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+  <% end %>
   
-<ul class="nav">
-  <li class="nav-item">
-    <a class="nav-link active" href="">Active</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#">Disabled</a>
-  </li>
-</ul>
-
-
-
+ 

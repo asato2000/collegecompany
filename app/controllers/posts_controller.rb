@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-   before_action :authenticate_user!, only: [:new,:create,:edit,:update,:destroy]
+   before_action :authenticate_user!, only: [:new,:create,:edit,:update,:destroy,:done]
    before_action :find_post, only: [:show, :edit, :update, :destroy, :purchase, :buy,:done] 
    before_action :correct_user, only: [:destroy,:edit]
    

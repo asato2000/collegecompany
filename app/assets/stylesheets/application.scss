@@ -111,76 +111,8 @@ body {
 }
 
 
-/* アニメーション*/
-.images {
-  /* 子要素を横並びに配置する */
-  display: flex;
-  width: 100%;
-  padding: 3% 2%;
-  box-sizing: border-box;
-  height: 50vh;
-  background: #EEEEEE;
-}
-
-@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxの場合に適用*/
-.images{
-display: flex;
-  width: 100%;
-  padding: 3% 2%;
-  box-sizing: border-box;
-  height: 25vh;
-  background: #EEEEEE;
-}
-}
 
 
-.image {
-  /* 要素位置の指定 */
-  flex: 1;
-  /* はみ出す箇所を隠す */
-  overflow: hidden;
-  /* アニメーション速度を指定 */
-  transition: .8s;
-  margin: 0 2%;
-  /* ボックスに影をつける（左から水平方向の長さ、垂直方向の長さ、ぼかしの長さ、色） */
-  box-shadow: 0 20px 30px rgba(0,0,0,.2);
-  /* 文字の高さを指定 */
-  line-height: 1;
-  background-color: #FFFFFF;
-}
-.image > img {
-  /* デフォルトでの画像のズーム率を指定 */
-  width: 100%;
-  /* 文字背景の高さを指定 */
-  height: calc(100% - 50vh);
-  /* imgをimageの枠にトリミングしてはめ込む */
-  object-fit: cover;
-  /* アニメーション速度を指定 */
-  transition: .8s;
-  filter: saturate(100%) brightness(100%) contrast(100%);
-  /* transformプロパティで画像のサイズを拡大・縮小調整 */
-  transform: scale(0);
-}
-.image > span {
-  font-weight: bold;
-  font-size: 30px;
-  display: block;
-  text-align: center;
-  /* 文字の高さを指定 */
-  line-height: 9;
-}
-.image:hover {
-  /* hover後の画像のサイズを指定 */
-  flex: 1 1 30%;
-}
-.image:hover > img {
-  width: 100%;
-  /* 背景の高さを調整 */
-  height: calc(100% - 0vh);
-  filter: saturate(240%) brightness(110%) contrast(110%);
-  /* transformプロパティで画像のサイズを拡大・縮小調整 */
-  transform: scale(1);
-}
 
 
 
@@ -598,8 +530,16 @@ h4.card-title-1 {
   overflow: hidden; 
 }
 .loop-box, .loop-box ul {
-  height: 300px; /* スライダーの高さ - 変更注意 */
+  height: 400px; /* スライダーの高さ - 変更注意 */
 }
+
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxの場合に適用*/
+.loop-box, .loop-box ul {
+  height:200px;
+}
+}
+
+
 .loop-box ul {
   position: absolute; left: 0; top: 0;
   display: flex; 
@@ -619,7 +559,7 @@ h4.card-title-1 {
   width: calc(100% / 3); /* li の幅を均等にする - 削除可・変更注意 */
 }
 .loop-box img {
-  height: auto;
+  height: 95%;
   width: 100%;
 }
 

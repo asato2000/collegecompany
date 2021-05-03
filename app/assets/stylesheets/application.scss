@@ -106,7 +106,8 @@ body {
 }
 
 .nav-link {
-    color: "#007BFF";
+    font-color: "#FFFFFF";
+    font-weight: bold;
 }
 
 
@@ -119,8 +120,20 @@ body {
   box-sizing: border-box;
   height: 50vh;
   background: #EEEEEE;
-  
 }
+
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxの場合に適用*/
+.images{
+display: flex;
+  width: 100%;
+  padding: 3% 2%;
+  box-sizing: border-box;
+  height: 25vh;
+  background: #EEEEEE;
+}
+}
+
+
 .image {
   /* 要素位置の指定 */
   flex: 1;
@@ -170,13 +183,14 @@ body {
 }
 
 
+
 /* ログインフォーム */
 
 
 .rog {
   text-align:right;
-  width:500px;
-  height:800px;
+  width: 100%;
+  height: 137%;
   margin-left:50px;
   border: 4px solid;
   border-right: 1px solid;
@@ -189,9 +203,13 @@ body {
   text-align:right;
   width:500px;
   height:580px;
-  
 }
 
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxの場合に適用*/
+.img-1 {
+display:none; /*非表示*/
+}
+}
 
 
 
@@ -205,6 +223,15 @@ body {
   outline: none;
 }
 
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxの場合に適用*/
+.form-group {
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 0px;
+  text-align: center;
+}
+}
+
 .form-control input{
   text-align:center;
   width:480px;
@@ -212,6 +239,17 @@ body {
   margin-right:15px;
  border-bottom: 2px solid #c0c0c0;
   outline: none;
+}
+
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxの場合に適用*/
+.form-control input {
+  text-align:center;
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+  border-bottom: 2px solid #c0c0c0;
+  outline: none;
+}
 }
 
 
@@ -228,8 +266,8 @@ body {
 
 .text-box {
   text-align:center;
-  width:500px;
-  height:800px;
+  width: 500px;
+  height: 800px;
   margin-left:90px;
   font-family: 'Open Sans', sans-serif;
   border: 4px solid;
@@ -237,10 +275,18 @@ body {
   box-shadow: 6px 6px #AAAAAA
 }
 
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxの場合に適用*/
+.text-box {
+width: 100%;
+margin-left: 0px;
+}
+}
+
+
+
 .text-center {
   text-align:right;
 }
-
 .btn {
   width:300px;
   text-align:center;
@@ -251,6 +297,19 @@ body {
    font-family: 'Open Sans', sans-serif;
 }
 
+
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxの場合に適用*/
+.btn {
+   width: 50%;
+   text-align:center;
+   background: #FF88FF;
+   margin-left: 70px;
+   margin-bottom: 20px;
+   margin-top: 45px;
+   font-family: 'Open Sans', sans-serif;
+}
+}
+
 .h1 {
   font-size: 100px;
   font-family: 'Open Sans', sans-serif;
@@ -258,27 +317,59 @@ body {
 
 /* 登録フォーム */
 
-.form-group-1 {
-  width:480px;
-  text-align:left;
-  margin-left:10px;
-  margin-top:10px;
-  border: none;
-  border-bottom: 2px solid #e9e9e9;
-  border-bottom: 2px solid #c0c0c0;
-  outline: none;
+.img-2 {
+  text-align:right;
+  width:500px;
+  height:695px;
 }
 
-.btn-1 {
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxの場合に適用*/
+.img-2 {
+display:none; /*非表示*/
+}
+}
+
+.text-box-1 {
+  text-align:center;
+  width: 500px;
+  height: 950px;
+  margin-left:90px;
+  font-family: 'Open Sans', sans-serif;
+  border: 4px solid;
+  border-color: #BBBBBB;
+  box-shadow: 6px 6px #AAAAAA
+}
+
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxの場合に適用*/
+.text-box-1 {
+width: 100%;
+margin-left: 0px;
+}
+}
+
+.container {
+  justify-content: center;
+}
+
+.actions {
   width:300px;
   text-align:center;
-   background: #FFFF77;
-   margin-left:100px;
-   margin-bottom: 10px;
-   margin-top:30px;
-   font-family: 'Open Sans', sans-serif;
-   outline: none;
+  font-family: 'Open Sans', sans-serif;
 }
+
+
+
+.text-center {
+  text-align:right;
+}
+
+
+
+.h1 {
+  font-size: 100px;
+  font-family: 'Open Sans', sans-serif;
+}
+
 
 
 /* 投稿編集フォーム */
@@ -299,7 +390,17 @@ body {
   margin-top:18px;
   outline: none;
   background-color:#BAD3FF;
- 
+}
+
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxの場合に適用*/
+.form-group0 {
+  width: 100%;
+  text-align:center;
+  margin-right:0px;
+  margin-top: 10px;
+  outline: none;
+  background-color:#BAD3FF;
+}
 }
 
 .y1 {
@@ -347,6 +448,13 @@ body {
 .card-img-top-1 {
   width:450px;
   height:550px;
+}
+
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxの場合に適用*/
+.card-img-top-1 {
+  width:100%;
+  height:400px;
+}
 }
 
 
@@ -446,4 +554,88 @@ h4.card-title-1 {
 
 .card-body {
   text-align: left;
+}
+
+
+
+/* 1.親スタイルリセットとペース設定 ++++++++++ */
+.slider-box p, .slider-box div, .loop-box ul, .loop-box li {
+  box-sizing: border-box; margin: 0 !important; padding: 0 !important;
+}
+
+/* 2.ベースBOXの設定 +++++++++++++++++++++ */
+.slider-box {
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%; /* 画面又は親要素に対するサイズ - 変更可 */
+  background: #333; /* 背景色 - 変更可・削除可 */
+  border: solid 5px #ccc; /* 囲み線 - 変更可・削除可 */
+  margin: 0 auto; /* Box外の余白 - 変更可 */
+  padding: 10px 0 0; /* 上端からスライダーまでの距離 - 変更可・削除可 */
+}
+
+/* 3.チェックボックスを利用した停止・再生などの設定 +++++++++++++++++ */
+.slider-check {
+  display: none;
+}
+.slider-check:checked ~ .loop-box > .loop {
+  animation-play-state: paused;
+}
+.slider-label {
+  display: block;
+  cursor: pointer;
+  color: #fff; /* 文字色 - 変更可 */
+  font-size: 24px; /* 文字サイズ - 変更可 */
+  line-height: 2; /* ボタン部分の高さ - 変更可 */
+  text-align: center;  
+}
+
+
+/* 4.スライダー本体とアニメーションの基本設定 ++++++++++++++ */
+.loop-box{
+  position: relative;
+  width: 100%;
+  overflow: hidden; 
+}
+.loop-box, .loop-box ul {
+  height: 300px; /* スライダーの高さ - 変更注意 */
+}
+.loop-box ul {
+  position: absolute; left: 0; top: 0;
+  display: flex; 
+  justify-content: space-between;
+  background: #000; /* スライダーの背景色 - 変更可 */
+  list-style: none;
+  max-width: 10000%; 
+  min-width: 100%;
+  width: calc(300px * 1.5 * 3); /* 画像の横幅×枚数 - 変更注意・変更可・変更注意 */
+  animation: 15s linear infinite; /* アニメーション設定 - 変更可 */
+}
+.loop-box li {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  color: #fff;
+  width: calc(100% / 3); /* li の幅を均等にする - 削除可・変更注意 */
+}
+.loop-box img {
+  height: auto;
+  width: 100%;
+}
+
+/* 5.アニメーション個別設定 ++++++++++ */
+.loop-box ul.loop1 {
+  animation-name: loop1;
+}
+.loop-box ul.loop2 {
+  animation-name: loop2;
+}
+@keyframes loop1 {
+  0% {transform: translateX(0); }
+  49.99999% {transform: translateX(-100%); }
+  50% {transform: translateX(100%); }
+}
+@keyframes loop2 {
+  0% {transform: translateX(100%); }
+  100%{transform: translateX(-100%); }
 }

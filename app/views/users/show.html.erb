@@ -1,24 +1,27 @@
 <div class="form">
-    
+    <div class="form-left">
     <h1>プロフィール</h1>
-
-<div class="form-groupi">
-     <label class="label2">名前</label>
-      <h3 class="card-title3"><%=@user.username%></h3>
-</div>
-
-<div class="form-groupi">
-     <label class="label2">大学名</label>
-      <h3 class="card-title3"><%=@user.college%></h3>
-</div>
-
 <div class="form-groupi">
     <label class="label2">画像</label>
     
      <h3 class="card-title3"><%= attachment_image_tag @user, :user_image, :fill, 300, 300, format: 'jpeg'%></h3>
     
 </div>
+<div class="form-groupi">
+     <label class="label2">名前</label>
+      <h3 class="card-title3"><%=@user.username%></h3>
+</div>
 
+
+<div class="form-groupi">
+     <label class="label2">大学名</label>
+      <h3 class="card-title3"><%=@user.college%></h3>
+</div>
+
+
+</div>
+
+<div class="form-right">
 
 <div class="like">
 <h1>いいね一覧</h1>
@@ -45,7 +48,9 @@
           </div>
         </div>
       </div>
-    </div>  
+      </div>
+    
+
   <% end %>
   
   <h1>投稿</h1>
@@ -73,5 +78,6 @@
       </div>
     </div>  
   <% end %>
+  </div> 
   
  

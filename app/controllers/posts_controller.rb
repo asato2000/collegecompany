@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-   before_action :authenticate_user!, only: [:new,:create,:edit,:update,:destroy,:done]
+   before_action :authenticate_user!, only: [:new,:create,:edit,:update,:destroy,:done,:purchase,:buy]
    before_action :find_post, only: [:show, :edit, :update, :destroy, :purchase, :buy,:done] 
    before_action :correct_user, only: [:destroy,:edit]
    
@@ -71,14 +71,18 @@ class PostsController < ApplicationController
       card: params['payjp-token'], 
       currency: 'jpy'
     )
-    @post.save
+    if @post.save
     redirect_to action: "done"
-    
+    else
+    redirect_to action: "purchase"
+    end 
+  end
     
   def done
+    
   end  
   
-  end   
+   
   
   private
   

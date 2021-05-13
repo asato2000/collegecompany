@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_05_032028) do
+ActiveRecord::Schema.define(version: 2021_05_12_084556) do
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -47,6 +47,11 @@ ActiveRecord::Schema.define(version: 2021_04_05_032028) do
     t.text "post_image_id"
     t.string "note"
     t.integer "price"
+    t.integer "seller"
+    t.bigint "seller_id"
+    t.bigint "buyer_id"
+    t.index ["buyer_id"], name: "index_posts_on_buyer_id"
+    t.index ["seller_id"], name: "index_posts_on_seller_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -70,4 +75,6 @@ ActiveRecord::Schema.define(version: 2021_04_05_032028) do
   add_foreign_key "favorites", "posts"
   add_foreign_key "favorites", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "posts", "users", column: "buyer_id"
+  add_foreign_key "posts", "users", column: "seller_id"
 end

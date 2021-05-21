@@ -71,11 +71,12 @@ class PostsController < ApplicationController
       card: params['payjp-token'], 
       currency: 'jpy'
     )
-    if @post.save
+    
     redirect_to action: "done"
-    else
-    redirect_to action: "purchase"
-    end 
+    
+    
+    
+    
   end
     
   def done

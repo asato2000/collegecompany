@@ -20,6 +20,34 @@
 
 
 </div>
+<h1>購入した商品</h1>
+<% @bought_items.each do |post| %>
+
+
+    <div class="col-md-3">
+      <div class="card">
+          <%= attachment_image_tag post, :post_image, class: "card-img-top"%>
+          <div class="card-body">
+          <h4 class="card-title"><%=post.title%></h4>
+          <h6 class="card-subtitle text-black"><%=post.subject%></h6>
+          <h6 class="card-subtitle text-muted"><%=post.teacher_name%></h6>
+          <p class="card-text"><%=post.content%></p>
+          <%= link_to "詳細", post_path(post), class: "fo"%>
+          <div class="text-center-1">
+             <% if current_user == post.user %>
+                  <%= link_to "削除", post, method: :delete, data: { confirm: "You sure?" }, class: 'btw' %>
+                  <%= link_to "編集", edit_post_path(post), class: "bta"%>
+             <%end%>
+             <div id="favorites_buttons_<%= post.id %>">
+             <%= render partial: 'favorites/favorite_button', locals: { post: post} %>
+             </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    
+
+  <% end %>
 
 
 

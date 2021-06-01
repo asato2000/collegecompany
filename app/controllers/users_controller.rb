@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     
     @fav_posts = @user.fav_posts.page(params[:page])
     @posts = @user.posts.page(params[:page])
-  
+    @bought_items = current_user.bought_items.page(params[:page])
   end  
   
 

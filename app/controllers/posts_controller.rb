@@ -14,8 +14,7 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
-    
+    @post = Post.new  
   end
 
   def create
@@ -71,6 +70,7 @@ class PostsController < ApplicationController
       card: params['payjp-token'], 
       currency: 'jpy'
     )
+    @post.update(buyer_id: current_user.id)
     
     redirect_to action: "done"
     
@@ -88,7 +88,7 @@ class PostsController < ApplicationController
   private
   
   def post_params
-    params.require(:post).permit(:content,:title,:teacher_name,:subject,:post_image,:note,:price)
+    params.require(:post).permit(:content,:title,:teacher_name,:subject,:post_image,:note,:price).merge(seller_id: current_user.id)
   end  
   
   def find_post

@@ -1,4 +1,3 @@
-
 /* layouts/application.html.erb　レスポンシブ*/
 @media screen and (min-width: 767px) { /*ウィンドウ幅が767px以上の場合に適用*/
 }
@@ -8,6 +7,11 @@
 
 @media screen and (max-width: 327px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
 }
+
+.bg {
+  background-color: white;
+}
+
 
 
 .pagination {
@@ -77,10 +81,10 @@ body {
 
 /* posts/index*/
 .card {
-background: rgba( 224, 236, 234, 0.25 );
+background: rgba( 238, 246, 242, 0.35 );
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 3.0px );
--webkit-backdrop-filter: blur( 3.0px );
+backdrop-filter: blur( 15.0px );
+-webkit-backdrop-filter: blur( 15.0px );
 border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
@@ -656,19 +660,19 @@ label.label2 {
 }
 
 /* 5.アニメーション個別設定 ++++++++++ */
-.loop-box ul.loop1 {
-  animation-name: loop1;
-}
-.loop-box ul.loop2 {
-  animation-name: loop2;
-}
-@keyframes loop1 {
-  0% {transform: translateX(0); }
-  49.99999% {transform: translateX(-100%); }
-  50% {transform: translateX(100%); }
-}
+// .loop-box ul.loop1 {
+//   animation-name: loop1;
+// }
+// .loop-box ul.loop2 {
+//   animation-name: loop2;
+// }
+// @keyframes loop1 {
+//   0% {transform: translateX(0); }
+//   49.99999% {transform: translateX(-100%); }
+//   50% {transform: translateX(100%); }
+// }
 
-@keyframes loop2 {
-  0% {transform: translateX(100%); }
-  100%{transform: translateX(-100%); }
-}
+// @keyframes loop2 {
+//   0% {transform: translateX(100%); }
+//   100%{transform: translateX(-100%); }
+// }
